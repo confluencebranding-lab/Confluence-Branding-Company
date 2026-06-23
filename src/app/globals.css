@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   CSS Custom Properties — Design System
+   ======================================== */
+:root {
+  --color-primary: #1E3A5F;
+  --color-accent: #2F5FA5;
+  --color-charcoal: #1C1C1C;
+  --color-gray-text: #666666;
+  --color-light-bg: #F8F9FB;
+  --color-border: #EAEAEA;
+  --color-success: #22C55E;
+  --color-white: #FFFFFF;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --radius-btn: 14px;
+  --radius-card: 16px;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+}
+
+/* ========================================
+   Custom Scrollbar
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+::selection {
+  background-color: rgba(30, 58, 95, 0.15);
+  color: var(--color-primary);
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+@layer components {
+  /* Glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  /* Section Container */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section Padding */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  }
+
+  /* Premium Card */
+  .premium-card {
+    @apply bg-white rounded-card border border-border shadow-card 
+           transition-all duration-500 ease-out;
+  }
+
+  .premium-card:hover {
+    @apply shadow-card-hover border-transparent;
+    transform: translateY(-4px);
+  }
+
+  /* Button Ripple Container */
+  .btn-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-ripple::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10%);
+    transform: scale(10);
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+
+  .btn-ripple:active::after {
+    transform: scale(0);
+    opacity: 1;
+    transition: 0s;
+  }
+}
+
+/* ========================================
+   Heading Styles
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ========================================
+   Focus Styles (Accessibility)
+   ======================================== */
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ========================================
+   Smooth link transitions
+   ======================================== */
+a {
+  transition: color 0.3s ease;
+}
+
+/* ========================================
+   Animated gradient background
+   ======================================== */
+.animated-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 58, 95, 0.03) 0%,
+    rgba(47, 95, 165, 0.05) 50%,
+    rgba(30, 58, 95, 0.03) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
