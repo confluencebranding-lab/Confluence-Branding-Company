@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://confluencebranding.com';
+  const baseUrl = 'https://confluence-branding-company.vercel.app';
 
   return {
     rules: {
