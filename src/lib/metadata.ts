@@ -8,6 +8,10 @@ const siteName = 'Confluence Branding Company (CBC)';
    ======================================== */
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
+
+    verification: {
+    google: '_g36gQtNm56cDDVmQKqZnbb_1ew5O3OfDJZe3F5fWYw',
+  },
   title: {
     default: `${siteName} — Premium Branding & Marketing Agency`,
     template: `%s | ${siteName}`,
