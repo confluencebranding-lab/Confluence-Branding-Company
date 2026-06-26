@@ -27,7 +27,7 @@ export default function RootLayout({
               name: 'Confluence Branding Company (CBC)',
               description:
                 'Premium branding and marketing agency helping businesses build powerful brand presence.',
-              url: 'https://confluence-branding-company.vercel.app',
+              url: 'https://confluencebranding.in',
               telephone: '+919789876125',
               email: 'confluencebranding@gmail.com',
               address: {

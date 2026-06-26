@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const siteUrl = 'https://confluence-branding-company.vercel.app';
+const siteUrl = 'https://confluencebranding.in';
 const siteName = 'Confluence Branding Company (CBC)';
 
 /* ========================================

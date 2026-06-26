@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://confluence-branding-company.vercel.app';
+  const baseUrl = 'https://confluencebranding.in';
 
   return [
     {
